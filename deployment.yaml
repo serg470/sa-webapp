@@ -1,23 +1,12 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
-  annotations:
-    deployment.kubernetes.io/revision: "1"
-    field.cattle.io/creatorId: user-js2ch
-    field.cattle.io/publicEndpoints: '[{"addresses":["192.168.1.84"],"port":30155,"protocol":"TCP","serviceName":"sa:sentiment-analysis-web-app-nodeport","allNodes":true}]'
-  generation: 2
   labels:
-    cattle.io/creator: norman
     workload.user.cattle.io/workloadselector: deployment-sa-sentiment-analysis-web-app
   name: sentiment-analysis-web-app
   namespace: sa
-  resourceVersion: "49134"
-  selfLink: /apis/apps/v1beta2/namespaces/sa/deployments/sentiment-analysis-web-app
-  uid: 07b582df-7d51-11e9-963c-080027b2e727
 spec:
-  progressDeadlineSeconds: 600
   replicas: 2
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       workload.user.cattle.io/workloadselector: deployment-sa-sentiment-analysis-web-app
@@ -28,9 +17,6 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      annotations:
-        field.cattle.io/ports: '[[{"containerPort":8080,"dnsName":"sentiment-analysis-web-app-nodeport","kind":"NodePort","name":"8080tcp301551","protocol":"TCP","sourcePort":30155}]]'
-      creationTimestamp: null
       labels:
         workload.user.cattle.io/workloadselector: deployment-sa-sentiment-analysis-web-app
     spec:
@@ -59,8 +45,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  observedGeneration: 2
-  replicas: 2
-  unavailableReplicas: 2
-  updatedReplicas: 2
