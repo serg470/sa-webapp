@@ -2,7 +2,7 @@ stages:
 - name: Compile
   steps:
   - runScriptConfig:
-      image: maven:3-alpine
+      image: zenika/alpine-maven:latest
       shellScript: mvn install
 - name: Docker
   steps:
