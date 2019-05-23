@@ -1,0 +1,15 @@
+stages:
+- name: Compile
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: mvn install
+- name: Docker
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: serg470/sentiment-analysis-web-app:kuber
+      registry: 127.0.0.1:34259
+timeout: 60
+notification: {}
