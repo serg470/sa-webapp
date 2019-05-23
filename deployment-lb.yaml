@@ -1,18 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  annotations:
-    field.cattle.io/creatorId: user-js2ch
-    field.cattle.io/ingressState: '{"d2ViYXBwL3NhL3hpcC5pby8vLzgwODA=":"deployment:sa:sentiment-analysis-web-app"}'
-  creationTimestamp: "2019-05-23T11:57:35Z"
-  generation: 1
   labels:
     cattle.io/creator: norman
   name: webapp
   namespace: sa
-  resourceVersion: "49931"
-  selfLink: /apis/extensions/v1beta1/namespaces/sa/ingresses/webapp
-  uid: f4815c30-7d51-11e9-963c-080027b2e727
 spec:
   rules:
   - host: xip.io
