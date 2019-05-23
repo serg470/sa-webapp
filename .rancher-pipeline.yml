@@ -2,7 +2,7 @@ stages:
 - name: Compile
   steps:
   - runScriptConfig:
-      image: java:8
+      image: maven:3-alpine
       shellScript: mvn install
 - name: Docker
   steps:
