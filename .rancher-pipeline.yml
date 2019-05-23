@@ -11,5 +11,13 @@ stages:
       buildContext: .
       tag: serg470/sentiment-analysis-web-app:kuber
       registry: 127.0.0.1:34259
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./deployment.yaml
+- name: LoadBalancer
+  steps:
+  - applyYamlConfig:
+      path: ./deployment-lb.yaml
 timeout: 60
 notification: {}
