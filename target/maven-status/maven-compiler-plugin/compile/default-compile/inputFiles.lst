@@ -1,0 +1,4 @@
+/opt/kuber/sa-webapp/src/main/java/com/sa/web/dto/SentimentDto.java
+/opt/kuber/sa-webapp/src/main/java/com/sa/web/SentimentAnalysisWebApp.java
+/opt/kuber/sa-webapp/src/main/java/com/sa/web/dto/SentenceDto.java
+/opt/kuber/sa-webapp/src/main/java/com/sa/web/SentimentController.java
