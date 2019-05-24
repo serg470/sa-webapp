@@ -20,8 +20,10 @@ spec:
       labels:
         workload.user.cattle.io/workloadselector: deployment-sa-sentiment-analysis-web-app
     spec:
+      imagePullSecrets:
+      - name: pipeline-docker-registry
       containers:
-      - image: serg470/sentiment-analysis-web-app:kuber
+      - image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
         imagePullPolicy: Always
         name: sentiment-analysis-web-app
         ports:

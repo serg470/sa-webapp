@@ -9,8 +9,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: serg470/sentiment-analysis-web-app:kuber
-      registry: 127.0.0.1:34259
+      tag: sa-webapp:${CICD_EXECUTION_SEQUENCE}
 - name: Deploy
   steps:
   - applyYamlConfig:
